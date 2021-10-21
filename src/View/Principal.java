@@ -42,6 +42,9 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton_CargarTabla = new javax.swing.JButton();
         jButton_GenerarQR = new javax.swing.JButton();
+        jButton_RegistrarUsuario = new javax.swing.JButton();
+        jButton_RegistrarMedico = new javax.swing.JButton();
+        jButton_RegistrarSede = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,14 +72,14 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Crear cita médica");
+        jButton1.setText("Crear Cita Médica");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton_CargarTabla.setText("Cargar citas");
+        jButton_CargarTabla.setText("Cargar Citas");
         jButton_CargarTabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_CargarTablaActionPerformed(evt);
@@ -90,18 +93,37 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton_RegistrarUsuario.setText("Registrar Pacientes");
+        jButton_RegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_RegistrarUsuarioActionPerformed(evt);
+            }
+        });
+
+        jButton_RegistrarMedico.setText("Registrar Médicos");
+
+        jButton_RegistrarSede.setText("Registrar Sedes");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton_CargarTabla)
-                .addGap(32, 32, 32)
-                .addComponent(jButton_GenerarQR)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton_RegistrarUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_RegistrarMedico)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_RegistrarSede))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton_CargarTabla)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton_GenerarQR)))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +133,12 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton_CargarTabla)
                     .addComponent(jButton_GenerarQR))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_RegistrarMedico)
+                    .addComponent(jButton_RegistrarUsuario)
+                    .addComponent(jButton_RegistrarSede))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -125,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -184,6 +211,12 @@ public class Principal extends javax.swing.JFrame {
         gQR.setVisible(true);
     }//GEN-LAST:event_jButton_GenerarQRActionPerformed
 
+    private void jButton_RegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RegistrarUsuarioActionPerformed
+        // TODO add your handling code here:
+        RegistrarPacientes rp = new RegistrarPacientes(this, false);
+        rp.setVisible(true);
+    }//GEN-LAST:event_jButton_RegistrarUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +256,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_CargarTabla;
     private javax.swing.JButton jButton_GenerarQR;
+    private javax.swing.JButton jButton_RegistrarMedico;
+    private javax.swing.JButton jButton_RegistrarSede;
+    private javax.swing.JButton jButton_RegistrarUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -56,7 +56,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" pref="905" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="0" pref="980" max="32767" attributes="0"/>
                       <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -166,12 +166,23 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jButton_CargarTabla" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jButton_GenerarQR" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton_RegistrarUsuario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton_RegistrarMedico" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton_RegistrarSede" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jButton_CargarTabla" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jButton_GenerarQR" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="535" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -184,7 +195,13 @@
                           <Component id="jButton_CargarTabla" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton_GenerarQR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton_RegistrarMedico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_RegistrarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_RegistrarSede" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -192,7 +209,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Crear cita m&#xe9;dica"/>
+                <Property name="text" type="java.lang.String" value="Crear Cita M&#xe9;dica"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -200,7 +217,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton_CargarTabla">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar citas"/>
+                <Property name="text" type="java.lang.String" value="Cargar Citas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_CargarTablaActionPerformed"/>
@@ -213,6 +230,24 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_GenerarQRActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_RegistrarUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registrar Pacientes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_RegistrarUsuarioActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_RegistrarMedico">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registrar M&#xe9;dicos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_RegistrarSede">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registrar Sedes"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

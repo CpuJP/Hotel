@@ -440,6 +440,8 @@ public class RegistroCitaMedica extends javax.swing.JDialog {
 
     private void jButton_MedicosDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_MedicosDisponiblesActionPerformed
         // TODO add your handling code here:
+        MedicosDisponibles md = new MedicosDisponibles(null, false);
+        md.setVisible(true);
     }//GEN-LAST:event_jButton_MedicosDisponiblesActionPerformed
 
     private void jButton_CrearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearCitaActionPerformed

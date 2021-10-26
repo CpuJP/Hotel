@@ -27,8 +27,7 @@ public class Ventana extends JFrame {
         etiqueta.setIcon(icono);
         
         this.setIconImage(imagen);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Ejemplo de codigo QR");
+        this.setTitle("codigo QR Paciente");
         this.getContentPane().add(etiqueta);
         this.pack();        
     }

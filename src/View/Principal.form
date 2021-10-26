@@ -243,11 +243,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar M&#xe9;dicos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_RegistrarMedicoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton_RegistrarSede">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar Sedes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_RegistrarSedeActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

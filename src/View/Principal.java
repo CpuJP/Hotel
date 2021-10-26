@@ -101,8 +101,18 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton_RegistrarMedico.setText("Registrar Médicos");
+        jButton_RegistrarMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_RegistrarMedicoActionPerformed(evt);
+            }
+        });
 
         jButton_RegistrarSede.setText("Registrar Sedes");
+        jButton_RegistrarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_RegistrarSedeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -216,6 +226,18 @@ public class Principal extends javax.swing.JFrame {
         RegistrarPacientes rp = new RegistrarPacientes(this, false);
         rp.setVisible(true);
     }//GEN-LAST:event_jButton_RegistrarUsuarioActionPerformed
+
+    private void jButton_RegistrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RegistrarMedicoActionPerformed
+        // TODO add your handling code here:
+        RegistrarMedico rm = new RegistrarMedico(this, false);
+        rm.setVisible(true);
+    }//GEN-LAST:event_jButton_RegistrarMedicoActionPerformed
+
+    private void jButton_RegistrarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RegistrarSedeActionPerformed
+        // TODO add your handling code here:
+        RegistrarSede rs = new RegistrarSede(this, false);
+        rs.setVisible(true);
+    }//GEN-LAST:event_jButton_RegistrarSedeActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,7 +17,7 @@ public class covidPacienteDAO {
             }else{
                 System.out.println("Problemas al conectar");
             }
-            String sql = "INSERT INTO Covid_Paciente (Contagio, Fecha_Contagio, Vacunado, Fecha_Vacunado, paciente_ID, paciente_Centro_Medico) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Covid_Paciente (Contagio, Fecha_Contagio, Vacunado, Fecha_Vacunado, Paciente_ID, Paciente_Centro_Medico) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conn.prepareCall(sql);
             statement.setString(1, cp.getContagio());
             statement.setString(2, cp.getFechaContagio());

@@ -5,6 +5,11 @@
  */
 package View;
 
+import Controller.medicoController;
+import Model.medico;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jp-co
@@ -49,11 +54,20 @@ public class MedicosDisponibles extends javax.swing.JDialog {
             new String [] {
                 "Cédula", "Nombre", "Apellido", "Teléfono", "Email", "Especialidad", "Lugar Trabajo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable_MedicosDisponibles);
         if (jTable_MedicosDisponibles.getColumnModel().getColumnCount() > 0) {
             jTable_MedicosDisponibles.getColumnModel().getColumn(0).setPreferredWidth(50);
             jTable_MedicosDisponibles.getColumnModel().getColumn(3).setPreferredWidth(50);
+            jTable_MedicosDisponibles.getColumnModel().getColumn(4).setPreferredWidth(80);
         }
 
         jButton_CargarInformacion.setText("Cargar datos");
@@ -67,21 +81,17 @@ public class MedicosDisponibles extends javax.swing.JDialog {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(288, 288, 288)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(380, Short.MAX_VALUE)
                 .addComponent(jButton_CargarInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addGap(356, 356, 356))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton_CargarInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -125,7 +135,17 @@ public class MedicosDisponibles extends javax.swing.JDialog {
 
     private void jButton_CargarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CargarInformacionActionPerformed
         // TODO add your handling code here:
-        
+        medicoController mc = new medicoController();
+        List<medico> medicos = mc.getMedicos();
+        DefaultTableModel m = (DefaultTableModel) jTable_MedicosDisponibles.getModel();
+        int totalFilas = m.getRowCount();
+        for (int i = totalFilas -1; i >= 0; i--) {
+            m.removeRow(i);
+        }
+        for (medico cm : medicos){
+            m.addRow(new Object[]{cm.getId(), cm.getNombre(), cm.getApellido(), 
+                cm.getTelefono(), cm.getEmail(), cm.getEspecialidad(), cm.getCentroMedico()});
+        }
     }//GEN-LAST:event_jButton_CargarInformacionActionPerformed
 
     /**

@@ -60,7 +60,15 @@ public class Principal extends javax.swing.JFrame {
             new String [] {
                 "Código", "Fecha y Hora", "Bono", "C.C Médico", "Lugar del Médico", "C.C Paciente", "Lugar del Paciente"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable_citasRegistradas);
         if (jTable_citasRegistradas.getColumnModel().getColumnCount() > 0) {
             jTable_citasRegistradas.getColumnModel().getColumn(0).setPreferredWidth(10);

@@ -6,7 +6,11 @@
 package View;
 
 import Controller.citaMedicaController;
+import Controller.medicoController;
+import Controller.pacienteController;
 import Model.citaMedica;
+import Model.medico;
+import Model.paciente;
 import javax.swing.JOptionPane;
 
 /**
@@ -432,10 +436,30 @@ public class RegistroCitaMedica extends javax.swing.JDialog {
 
     private void jButton_BuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarPacienteActionPerformed
         // TODO add your handling code here:
+        pacienteController pc = new pacienteController();
+        String cedula = jTextField_BuscarPaciente.getText();
+        paciente p = pc.getPacienteById(cedula);
+        if (p.getId() == null) {
+            JOptionPane.showMessageDialog(null, "No hay ningun paciente registrado con la cédula: "+jTextField_BuscarPaciente.getText());
+        }
+        jTextField_NombrePaciente.setText(p.getNombre());
+        jTextField_ApellidoPaciente.setText(p.getApellido());
+        jTextField_Eps.setText(p.getEps());
+        jTextField_LugarDondeLoAtienden.setText(p.getCentroMedico());
     }//GEN-LAST:event_jButton_BuscarPacienteActionPerformed
 
     private void jButton_BuscarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarMedicoActionPerformed
         // TODO add your handling code here:
+        medicoController mc = new medicoController();
+        String cedula = jTextField_BuscarMedico.getText();
+        medico m = mc.getMedicoById(cedula);
+        if (m.getId() == null) {
+            JOptionPane.showMessageDialog(null, "No hay ningun médico registrado con la cédula: "+jTextField_BuscarMedico.getText());
+        }
+        jTextField_NombreMedico.setText(m.getNombre());
+        jTextField_ApellidoMedico.setText(m.getApellido());
+        jTextField_Especialidad.setText(m.getEspecialidad());
+        jTextField_LugarDondeAtiende.setText(m.getCentroMedico());
     }//GEN-LAST:event_jButton_BuscarMedicoActionPerformed
 
     private void jButton_MedicosDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_MedicosDisponiblesActionPerformed
@@ -445,7 +469,7 @@ public class RegistroCitaMedica extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton_MedicosDisponiblesActionPerformed
 
     private void jButton_CrearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearCitaActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         try {
         citaMedicaController cmc = new citaMedicaController();
         String fecha = jComboBox_Año.getSelectedItem().toString()+"-"+jComboBox_Mes.getSelectedItem().toString()+"-"

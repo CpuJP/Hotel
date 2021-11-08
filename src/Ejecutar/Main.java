@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Ejecutar;
 
-/**
- *
- * @author jp-co
- */
+import Controller.*;
+
 public class Main {
-    
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.vista();
+    }
+    public void vista(){
+        menuPrincipalController mp = new menuPrincipalController();
+        mp.mostrarVista();
+    }
 }

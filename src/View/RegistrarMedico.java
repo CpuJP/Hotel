@@ -5,6 +5,10 @@
  */
 package View;
 
+import Controller.medicoController;
+import Model.medico;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jp-co
@@ -84,15 +88,14 @@ public class RegistrarMedico extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField_Telefono, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                     .addComponent(jLabel8)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel4)
-                        .addComponent(jTextField_Apellido)
-                        .addComponent(jTextField_ID)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextField_Nombre)))
+                    .addComponent(jTextField_Email, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField_Apellido)
+                    .addComponent(jTextField_ID)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField_Nombre))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -167,10 +170,25 @@ public class RegistrarMedico extends javax.swing.JDialog {
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton_Registrar.setText("Registrar");
+        jButton_Registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_RegistrarActionPerformed(evt);
+            }
+        });
 
         jButton_Modificar.setText("Modificar");
+        jButton_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ModificarActionPerformed(evt);
+            }
+        });
 
         jButton_Eliminar.setText("Eliminar");
+        jButton_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -188,17 +206,22 @@ public class RegistrarMedico extends javax.swing.JDialog {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jButton_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_Modificar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_Eliminar)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(12, 12, 12))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton_AntecedentesCovid.setText("Antecedentes Covid-19");
+        jButton_AntecedentesCovid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_AntecedentesCovidActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -272,16 +295,14 @@ public class RegistrarMedico extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(27, 27, 27)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -309,6 +330,44 @@ public class RegistrarMedico extends javax.swing.JDialog {
         MedicosDisponibles md = new MedicosDisponibles(null, false);
         md.setVisible(true);
     }//GEN-LAST:event_jButton_MedicosDisponiblesActionPerformed
+
+    private void jButton_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RegistrarActionPerformed
+        // TODO add your handling code here:
+        try {
+            medicoController mc = new medicoController();
+            String id = jTextField_ID.getText();
+            String nombre = jTextField_Nombre.getText();
+            String apellido = jTextField_Apellido.getText();
+            String telefono = jTextField_Telefono.getText();
+            String email = jTextField_Email.getText();
+            String espacialidad = jTextField_Especialidad.getText();
+            String centroMedico = jTextField_LugarDeTrabajo.getText();
+            medico m = new medico(id, nombre, apellido, telefono, email, espacialidad, centroMedico);
+            mc.saveMedico(m);            
+            JOptionPane.showMessageDialog(null, "El médico con cédula: "+jTextField_ID.getText()+" se registró con éxito");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al registrar médico, verifique los datos");
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jButton_RegistrarActionPerformed
+
+    private void jButton_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ModificarActionPerformed
+        // TODO add your handling code here:
+        ModificarMedico mm = new ModificarMedico(null, false);
+        mm.setVisible(true);
+    }//GEN-LAST:event_jButton_ModificarActionPerformed
+
+    private void jButton_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarActionPerformed
+        // TODO add your handling code here:
+        EliminarMedico em = new EliminarMedico(null, false);
+        em.setVisible(true);
+    }//GEN-LAST:event_jButton_EliminarActionPerformed
+
+    private void jButton_AntecedentesCovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AntecedentesCovidActionPerformed
+        // TODO add your handling code here:
+        CovidMedico cm = new CovidMedico(null, false);
+        cm.setVisible(true);
+    }//GEN-LAST:event_jButton_AntecedentesCovidActionPerformed
 
     /**
      * @param args the command line arguments

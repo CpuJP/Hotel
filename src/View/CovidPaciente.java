@@ -61,6 +61,7 @@ public class CovidPaciente extends javax.swing.JDialog {
         jButton_CargarSede = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton_RegistrarAntecedentes = new javax.swing.JButton();
+        jButton_ConsultarAntecedentes = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -232,13 +233,22 @@ public class CovidPaciente extends javax.swing.JDialog {
             }
         });
 
+        jButton_ConsultarAntecedentes.setText("Consultar antecedentes");
+        jButton_ConsultarAntecedentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ConsultarAntecedentesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jButton_RegistrarAntecedentes, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton_RegistrarAntecedentes, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jButton_ConsultarAntecedentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -246,7 +256,9 @@ public class CovidPaciente extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jButton_RegistrarAntecedentes, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton_ConsultarAntecedentes)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
@@ -309,9 +321,7 @@ public class CovidPaciente extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -348,6 +358,12 @@ public class CovidPaciente extends javax.swing.JDialog {
         }
         jTextField_Sede.setText(p.getCentroMedico());
     }//GEN-LAST:event_jButton_CargarSedeActionPerformed
+
+    private void jButton_ConsultarAntecedentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ConsultarAntecedentesActionPerformed
+        // TODO add your handling code here:
+        AntecedentesPaciente ap = new AntecedentesPaciente(null, false);
+        ap.setVisible(true);
+    }//GEN-LAST:event_jButton_ConsultarAntecedentesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,6 +409,7 @@ public class CovidPaciente extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_CargarSede;
+    private javax.swing.JButton jButton_ConsultarAntecedentes;
     private javax.swing.JButton jButton_RegistrarAntecedentes;
     private javax.swing.JComboBox<String> jComboBox_AñoContagio;
     private javax.swing.JComboBox<String> jComboBox_AñoVacuna;

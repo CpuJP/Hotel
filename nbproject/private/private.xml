@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/RegistrarPacientes.java</file>
-            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/RegistrarMedico.java</file>
-            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/RegistroCitaMedica.java</file>
+            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/CovidMedico.java</file>
+            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/CovidPaciente.java</file>
+            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/AntecedentesMedico.java</file>
+            <file>file:/D:/COSAS%20JP/UNIVERSIDAD/SEMESTRE%204/P.I/Código/Hospital/src/View/AntecedentesPaciente.java</file>
         </group>
     </open-files>
 </project-private>
